@@ -42,7 +42,7 @@ const Header = () => {
       try {
         setNotifLoading(true);
         const { data } = await axios.get(
-          "http://localhost:5000/api/notifications"
+          "https://ecommerce-web-app-new.vercel.app/api/notifications"
         );
         setNotifications(Array.isArray(data) ? data : []);
       } catch (err) {
@@ -86,7 +86,7 @@ const Header = () => {
       try {
         setIsLoadingSearch(true);
         const { data } = await axios.get(
-          `http://localhost:5000/api/products?search=${encodeURIComponent(
+          `https://ecommerce-web-app-new.vercel.app/api/products?search=${encodeURIComponent(
             searchTerm
           )}`
         );
@@ -147,7 +147,7 @@ const Header = () => {
     if (!notif.isRead) {
       try {
         await axios.patch(
-          `http://localhost:5000/api/notifications/${notif._id}/read`
+          `https://ecommerce-web-app-new.vercel.app/api/notifications/${notif._id}/read`
         );
         setNotifications((prev) =>
           prev.map((n) => (n._id === notif._id ? { ...n, isRead: true } : n))

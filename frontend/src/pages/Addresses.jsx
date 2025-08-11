@@ -20,7 +20,9 @@ const Addresses = () => {
     }
     setLoading(true);
     axios
-      .get("http://localhost:5000/api/user/shipping-addresses")
+      .get(
+        "https://ecommerce-web-app-new.vercel.app/api/user/shipping-addresses"
+      )
       .then((res) => {
         if (Array.isArray(res.data)) {
           setAddresses(res.data);

@@ -9,7 +9,7 @@ export const fetchUserProfile = createAsyncThunk(
       const { auth } = getState();
       // ✅ Include token in headers
       const { data } = await axios.get(
-        "http://localhost:5000/api/user/profile",
+        "https://ecommerce-web-app-new.vercel.app/api/user/profile",
         {
           headers: { Authorization: `Bearer ${auth.userInfo.token}` },
         }
@@ -28,7 +28,7 @@ export const updateUserProfile = createAsyncThunk(
     try {
       const { auth } = getState();
       const { data } = await axios.put(
-        "http://localhost:5000/api/user/profile",
+        "https://ecommerce-web-app-new.vercel.app/api/user/profile",
         userData,
         {
           headers: { Authorization: `Bearer ${auth.userInfo.token}` },

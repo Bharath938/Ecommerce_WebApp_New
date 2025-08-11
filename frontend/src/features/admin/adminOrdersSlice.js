@@ -6,7 +6,9 @@ export const fetchAdminOrders = createAsyncThunk(
   "adminOrders/fetchAll",
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/orders");
+      const { data } = await axios.get(
+        "https://ecommerce-web-app-new.vercel.app/api/orders"
+      );
       return data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
@@ -20,7 +22,7 @@ export const updateOrderStatus = createAsyncThunk(
   async ({ id, status }, { rejectWithValue }) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/orders/${id}/status`,
+        `https://ecommerce-web-app-new.vercel.app/api/orders/${id}/status`,
         { status }
       );
       return data;

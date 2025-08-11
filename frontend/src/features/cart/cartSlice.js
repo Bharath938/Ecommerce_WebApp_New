@@ -6,7 +6,9 @@ export const fetchCart = createAsyncThunk(
   "cart/fetchCart",
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get("http://localhost:5000/api/cart");
+      const { data } = await axios.get(
+        "https://ecommerce-web-app-new.vercel.app/api/cart"
+      );
       const cartItems = Array.isArray(data) ? data : data.items || [];
       return cartItems;
     } catch (err) {
@@ -20,10 +22,13 @@ export const addToCart = createAsyncThunk(
   "cart/addToCart",
   async ({ productId, quantity }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post("http://localhost:5000/api/cart", {
-        productId,
-        quantity,
-      });
+      const { data } = await axios.post(
+        "https://ecommerce-web-app-new.vercel.app/api/cart",
+        {
+          productId,
+          quantity,
+        }
+      );
       return data; // { product, quantity }
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
@@ -36,7 +41,9 @@ export const removeFromCart = createAsyncThunk(
   "cart/removeFromCart",
   async (productId, { rejectWithValue }) => {
     try {
-      await axios.delete(`http://localhost:5000/api/cart/${productId}`);
+      await axios.delete(
+        `https://ecommerce-web-app-new.vercel.app/api/cart/${productId}`
+      );
       return productId;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
@@ -50,7 +57,7 @@ export const updateCartItem = createAsyncThunk(
   async ({ productId, quantity }, { rejectWithValue }) => {
     try {
       const { data } = await axios.put(
-        `http://localhost:5000/api/cart/${productId}`,
+        `https://ecommerce-web-app-new.vercel.app/api/cart/${productId}`,
         { quantity }
       );
       return data; // updated cart item
@@ -65,7 +72,7 @@ export const clearCartOnServer = createAsyncThunk(
   "cart/clearCartOnServer",
   async (_, { rejectWithValue }) => {
     try {
-      await axios.delete("http://localhost:5000/api/cart"); // assumes API supports DELETE all
+      await axios.delete("https://ecommerce-web-app-new.vercel.app/api/cart"); // assumes API supports DELETE all
       return true;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);

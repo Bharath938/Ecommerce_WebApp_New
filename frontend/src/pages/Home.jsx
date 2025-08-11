@@ -11,7 +11,7 @@ const Home = () => {
     const fetchCategories = async () => {
       try {
         const { data } = await axios.get(
-          "http://localhost:5000/api/categories"
+          "https://ecommerce-web-app-new.vercel.app/api/categories"
         );
         setCategories(data);
       } catch (error) {

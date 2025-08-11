@@ -33,7 +33,7 @@ const Products = () => {
     setLoading(true);
     setError(null);
     axios
-      .get("http://localhost:5000/api/products")
+      .get("https://ecommerce-web-app-new.vercel.app/api/products")
       .then((res) => {
         if (Array.isArray(res.data)) setAllProducts(res.data);
         else setAllProducts([]);

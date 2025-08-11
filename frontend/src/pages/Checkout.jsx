@@ -64,7 +64,9 @@ const CheckoutForm = () => {
     dispatch(fetchCart());
 
     axios
-      .get("http://localhost:5000/api/user/shipping-addresses")
+      .get(
+        "https://ecommerce-web-app-new.vercel.app/api/user/shipping-addresses"
+      )
       .then((res) => {
         const addrs = Array.isArray(res.data) ? res.data : [];
         setAddresses(addrs);
@@ -114,7 +116,10 @@ const CheckoutForm = () => {
     if (Object.keys(errors).length > 0) return;
 
     axios
-      .post("http://localhost:5000/api/user/shipping-addresses", form)
+      .post(
+        "https://ecommerce-web-app-new.vercel.app/api/user/shipping-addresses",
+        form
+      )
       .then((res) => {
         toast.success("Address added");
         setAddresses(res.data);
@@ -137,7 +142,9 @@ const CheckoutForm = () => {
   // Remove address
   const deleteAddress = (id) => {
     axios
-      .delete(`http://localhost:5000/api/user/shipping-addresses/${id}`)
+      .delete(
+        `https://ecommerce-web-app-new.vercel.app/api/user/shipping-addresses/${id}`
+      )
       .then((res) => {
         toast.success("Address removed");
         setAddresses(res.data);
@@ -160,7 +167,7 @@ const CheckoutForm = () => {
   // Create PayPal order on backend
   const createPaypalOrder = async () => {
     const response = await axios.post(
-      "http://localhost:5000/api/orders/create-paypal-order",
+      "https://ecommerce-web-app-new.vercel.app/api/orders/create-paypal-order",
       {
         totalPrice,
       }
@@ -174,7 +181,7 @@ const CheckoutForm = () => {
 
     try {
       const captureRes = await axios.post(
-        `http://localhost:5000/orders/capture-paypal-order/${data.orderID}`
+        `https://ecommerce-web-app-new.vercel.app/orders/capture-paypal-order/${data.orderID}`
       );
 
       const paymentResult = {
@@ -231,7 +238,7 @@ const CheckoutForm = () => {
       };
 
       const res = await axios.post(
-        "http://localhost:5000/api/orders",
+        "https://ecommerce-web-app-new.vercel.app/api/orders",
         orderData
       );
 
