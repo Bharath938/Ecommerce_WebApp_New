@@ -1,4 +1,5 @@
 // backend/index.js
+
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
@@ -7,6 +8,7 @@ require("dotenv").config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
+// Import routes
 const authRoute = require("./routes/authRoute");
 const productRoute = require("./routes/productRoute");
 const cartRoute = require("./routes/cartRoute");
@@ -43,7 +45,10 @@ app.use("/api/categories", categoryRoute);
 // Root route
 app.get("/", (req, res) => res.send("QuickBasket API is running"));
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// ✅ For Vercel serverless: export the app instead of listening directly
+module.exports = app;
+
+// ℹ️ For local development, uncomment this:
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
