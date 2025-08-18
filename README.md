@@ -69,7 +69,7 @@ QuickBasket is a full-featured e-commerce web application designed to demonstrat
 
 ## Demo
 
-Check out the live app: [[Your Demo URL here](https://imaginative-dodol-553d7d.netlify.app/register)]
+Check out the live app: [[Your Demo URL here](https://imaginative-dodol-553d7d.netlify.app/)]
 
 ## Getting Started
 
