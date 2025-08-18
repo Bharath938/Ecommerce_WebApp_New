@@ -70,7 +70,7 @@ QuickBasket is a full-featured e-commerce web application designed to demonstrat
 ## Getting Started
 
 ### 1. Clone the repository
-git clone https://github.com/your-username/quickbasket.git
+git clone https://github.com/Bharath938/quickbasket.git
 cd quickbasket
 
 text
