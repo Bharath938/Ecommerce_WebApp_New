@@ -73,8 +73,6 @@ QuickBasket is a full-featured e-commerce web application designed to demonstrat
 git clone https://github.com/Bharath938/Ecommerce_WebApp_New
 cd quickbasket
 
-text
-
 ### 2. Set up the backend
 cd backend
 npm install
@@ -82,18 +80,14 @@ npm install
 Create a .env file with your configuration (e.g., MONGO_URI, JWT_SECRET)
 npm start
 
-text
-
 ### 3. Set up the frontend
 Open a new terminal window:
 cd frontend
 npm install
 npm start
 
-text
-
 ### 4. Visit the application
-- Frontend runs at `http://localhost:3000`
+- Frontend runs at `http://localhost:5173`
 - Backend runs at `http://localhost:5000`
 
 
@@ -109,5 +103,5 @@ This project is open source and available for any use or improvement. Please giv
 
 ## Contact
 
-For collaboration or queries, feel free to reach out via [LinkedIn](your-link-here).
+For collaboration or queries, feel free to reach out via [LinkedIn](www.linkedin.com/in/karrolla-bharath-745a7621a).
 
