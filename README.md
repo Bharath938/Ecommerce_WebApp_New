@@ -103,5 +103,5 @@ This project is open source and available for any use or improvement. Please giv
 
 ## Contact
 
-For collaboration or queries, feel free to reach out via [LinkedIn](www.linkedin.com/in/karrolla-bharath-745a7621a).
+For collaboration or queries, feel free to reach out via www.linkedin.com/in/karrolla-bharath-745a7621a.
 
