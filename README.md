@@ -77,7 +77,11 @@ cd quickbasket
 cd backend
 npm install
 
-Create a .env file with your configuration (e.g., MONGO_URI, JWT_SECRET)
+Create a .env file with your configuration
+
+MONGO_URI=your_mongo_connection_string_here
+JWT_SECRET=your_jwt_secret_here
+
 npm start
 
 ### 3. Set up the frontend
