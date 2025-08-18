@@ -67,6 +67,10 @@ QuickBasket is a full-featured e-commerce web application designed to demonstrat
 **Admin: Manage Orders**  
 <img width="1080" height="720" alt="{CCFFF6BA-E0FE-41D5-8501-A64E48CCEA6A}" src="https://github.com/user-attachments/assets/762edd66-a697-4cc0-a425-7f1327568a58" />
 
+## Demo
+
+Check out the live app: [[Your Demo URL here](https://imaginative-dodol-553d7d.netlify.app/register)]
+
 ## Getting Started
 
 ### 1. Clone the repository
