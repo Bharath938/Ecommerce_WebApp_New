@@ -23,8 +23,8 @@ const ProductDetails = () => {
       try {
         setLoading(true);
         setError(null);
-        const { data } = await axios.get(
-          `https://ecommerce-web-app-new.vercel.app/api/products/${id}`
+        const { data } = await instance.get(
+          /api/products/${id}`
         );
         setProductDetails(data);
       } catch (err) {
