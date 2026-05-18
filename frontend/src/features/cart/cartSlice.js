@@ -42,7 +42,7 @@ export const removeFromCart = createAsyncThunk(
   async (productId, { rejectWithValue }) => {
     try {
       await instance.delete(
-        "/api/cart/${productId}`
+        `/api/cart/${productId}`
       );
       return productId;
     } catch (err) {
@@ -57,7 +57,7 @@ export const updateCartItem = createAsyncThunk(
   async ({ productId, quantity }, { rejectWithValue }) => {
     try {
       const { data } = await instance.put(
-        "/api/cart/${productId}`,
+        1/api/cart/${productId}`,
         { quantity }
       );
       return data; // updated cart item
