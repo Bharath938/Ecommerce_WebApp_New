@@ -27,8 +27,8 @@ const Orders = () => {
       return;
     }
     setLoading(true);
-    axios
-      .get("https://ecommerce-web-app-new.vercel.app/api/orders/myorders")
+    instance
+      .get("/api/orders/myorders")
       .then((res) => {
         if (Array.isArray(res.data)) {
           setOrders(res.data);
@@ -45,14 +45,14 @@ const Orders = () => {
     if (!userInfo || !selected) return;
 
     // Fetch notifications for the logged-in user
-    axios
-      .get("https://ecommerce-web-app-new.vercel.app/api/notifications")
+    instance
+      .get("/api/notifications")
       .then((res) => {
         const arr = Array.isArray(res.data) ? res.data : [];
         arr.forEach((notif) => {
           if (!notif.isRead) {
-            axios.patch(
-              `https://ecommerce-web-app-new.vercel.app/api/notifications/${notif._id}/read`
+            instance.patch(
+              /api/notifications/${notif._id}/read`
             );
           }
         });
