@@ -10,8 +10,8 @@ export const fetchAdminProducts = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     console.log("supoerb");
     try {
-      const { data } = await axios.get(
-        "https://ecommerce-web-app-new.vercel.app/api/products"
+      const { data } = await instance.get(
+        /api/products"
       );
       return data;
     } catch (err) {
@@ -27,8 +27,8 @@ export const createProduct = createAsyncThunk(
   "adminProducts/create",
   async (productData, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(
-        "https://ecommerce-web-app-new.vercel.app/api/products",
+      const { data } = await instance.post(
+        /api/products",
         productData
       );
       return data;
@@ -45,8 +45,8 @@ export const updateProduct = createAsyncThunk(
   "adminProducts/update",
   async ({ id, productData }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.put(
-        `https://ecommerce-web-app-new.vercel.app/api/products/${id}`,
+      const { data } = await instance.put(
+        /api/products/${id}`,
         productData
       );
       return data;
@@ -63,8 +63,8 @@ export const deleteProduct = createAsyncThunk(
   "adminProducts/delete",
   async (id, { rejectWithValue }) => {
     try {
-      await axios.delete(
-        `https://ecommerce-web-app-new.vercel.app/api/products/${id}`
+      await instance.delete(
+        /api/products/${id}`
       );
       return id;
     } catch (err) {
