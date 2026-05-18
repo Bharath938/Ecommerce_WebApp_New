@@ -21,7 +21,7 @@ const Addresses = () => {
     setLoading(true);
     instance
       .get(
-        /api/user/shipping-addresses"
+        "/api/user/shipping-addresses"
       )
       .then((res) => {
         if (Array.isArray(res.data)) {
