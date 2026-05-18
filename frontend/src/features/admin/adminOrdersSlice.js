@@ -7,7 +7,7 @@ export const fetchAdminOrders = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await instance.get(
-        /api/orders"
+        "/api/orders"
       );
       return data;
     } catch (err) {
@@ -22,7 +22,7 @@ export const updateOrderStatus = createAsyncThunk(
   async ({ id, status }, { rejectWithValue }) => {
     try {
       const { data } = await instance.put(
-       /api/orders/${id}/status`,
+       `/api/orders/${id}/status`,
         { status }
       );
       return data;
