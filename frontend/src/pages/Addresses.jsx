@@ -19,9 +19,9 @@ const Addresses = () => {
       return;
     }
     setLoading(true);
-    axios
+    instance
       .get(
-        "https://ecommerce-web-app-new.vercel.app/api/user/shipping-addresses"
+        /api/user/shipping-addresses"
       )
       .then((res) => {
         if (Array.isArray(res.data)) {
