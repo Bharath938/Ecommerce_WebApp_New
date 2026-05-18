@@ -10,8 +10,8 @@ const Home = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const { data } = await axios.get(
-          "https://ecommerce-web-app-new.vercel.app/api/categories"
+        const { data } = await instance.get(
+          /api/categories"
         );
         setCategories(data);
       } catch (error) {
