@@ -6,8 +6,8 @@ export const fetchCart = createAsyncThunk(
   "cart/fetchCart",
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(
-        "https://ecommerce-web-app-new.vercel.app/api/cart"
+      const { data } = await instance.get(
+        /api/cart"
       );
       const cartItems = Array.isArray(data) ? data : data.items || [];
       return cartItems;
@@ -22,8 +22,8 @@ export const addToCart = createAsyncThunk(
   "cart/addToCart",
   async ({ productId, quantity }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(
-        "https://ecommerce-web-app-new.vercel.app/api/cart",
+      const { data } = await instance.post(
+        /api/cart",
         {
           productId,
           quantity,
@@ -41,8 +41,8 @@ export const removeFromCart = createAsyncThunk(
   "cart/removeFromCart",
   async (productId, { rejectWithValue }) => {
     try {
-      await axios.delete(
-        `https://ecommerce-web-app-new.vercel.app/api/cart/${productId}`
+      await instance.delete(
+        /api/cart/${productId}`
       );
       return productId;
     } catch (err) {
@@ -56,8 +56,8 @@ export const updateCartItem = createAsyncThunk(
   "cart/updateCartItem",
   async ({ productId, quantity }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.put(
-        `https://ecommerce-web-app-new.vercel.app/api/cart/${productId}`,
+      const { data } = await instance.put(
+        /api/cart/${productId}`,
         { quantity }
       );
       return data; // updated cart item
@@ -72,7 +72,7 @@ export const clearCartOnServer = createAsyncThunk(
   "cart/clearCartOnServer",
   async (_, { rejectWithValue }) => {
     try {
-      await axios.delete("https://ecommerce-web-app-new.vercel.app/api/cart"); // assumes API supports DELETE all
+      await instance.delete(/api/cart"); // assumes API supports DELETE all
       return true;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
