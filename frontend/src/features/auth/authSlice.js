@@ -12,7 +12,7 @@ export const registerUser = createAsyncThunk(
   async ({ name, email, password }, { rejectWithValue }) => {
     try {
       const { data } = await instance.post(
-        /api/auth/register",
+        "/api/auth/register",
         {
           name,
           email,
