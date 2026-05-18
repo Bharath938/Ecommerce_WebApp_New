@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  baseURL: "/", // Your backend base URL if different (e.g., http://localhost:5000)
+  baseURL: "https://ecommerce-webapp-new-1.onrender.com",
 });
 
 instance.interceptors.request.use(
