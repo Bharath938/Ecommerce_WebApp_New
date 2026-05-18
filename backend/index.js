@@ -48,7 +48,6 @@ app.get("/", (req, res) => res.send("QuickBasket API is running"));
 // ✅ For Vercel serverless: export the app instead of listening directly
 module.exports = app;
 
-// ℹ️ For local development, uncomment this:
-// app.listen(PORT, () => {
-//   console.log(`Server running on port ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+ });
