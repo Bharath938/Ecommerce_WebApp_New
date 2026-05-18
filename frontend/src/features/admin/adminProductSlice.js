@@ -46,7 +46,7 @@ export const updateProduct = createAsyncThunk(
   async ({ id, productData }, { rejectWithValue }) => {
     try {
       const { data } = await instance.put(
-        "/api/products/${id}`,
+        `/api/products/${id}`,
         productData
       );
       return data;
