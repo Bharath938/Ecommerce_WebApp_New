@@ -11,8 +11,8 @@ export const registerUser = createAsyncThunk(
   "auth/registerUser",
   async ({ name, email, password }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(
-        "https://ecommerce-web-app-new.vercel.app/api/auth/register",
+      const { data } = await instance.post(
+        /api/auth/register",
         {
           name,
           email,
@@ -37,8 +37,8 @@ export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async ({ email, password }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(
-        "https://ecommerce-web-app-new.vercel.app/api/auth/login",
+      const { data } = await instance.post(
+        /api/auth/login",
         { email, password }
       );
       localStorage.setItem("userInfo", JSON.stringify(data));
