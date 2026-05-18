@@ -24,7 +24,7 @@ const ProductDetails = () => {
         setLoading(true);
         setError(null);
         const { data } = await instance.get(
-          /api/products/${id}`
+          "/api/products/${id}`
         );
         setProductDetails(data);
       } catch (err) {
