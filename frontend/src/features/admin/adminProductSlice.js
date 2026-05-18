@@ -11,7 +11,7 @@ export const fetchAdminProducts = createAsyncThunk(
     console.log("supoerb");
     try {
       const { data } = await instance.get(
-        /api/products"
+        "/api/products"
       );
       return data;
     } catch (err) {
@@ -28,7 +28,7 @@ export const createProduct = createAsyncThunk(
   async (productData, { rejectWithValue }) => {
     try {
       const { data } = await instance.post(
-        /api/products",
+       "/api/products",
         productData
       );
       return data;
@@ -46,7 +46,7 @@ export const updateProduct = createAsyncThunk(
   async ({ id, productData }, { rejectWithValue }) => {
     try {
       const { data } = await instance.put(
-        /api/products/${id}`,
+        "/api/products/${id}`,
         productData
       );
       return data;
@@ -64,7 +64,7 @@ export const deleteProduct = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       await instance.delete(
-        /api/products/${id}`
+        `/api/products/${id}`
       );
       return id;
     } catch (err) {
