@@ -41,9 +41,7 @@ const Header = () => {
     const fetchNotifs = async () => {
       try {
         setNotifLoading(true);
-        const { data } = await axios.get(
-          "https://ecommerce-web-app-new.vercel.app/api/notifications"
-        );
+        const { data } = await instance.get(/api/notifications");
         setNotifications(Array.isArray(data) ? data : []);
       } catch (err) {
         console.error("Notif fetch failed");
@@ -85,8 +83,8 @@ const Header = () => {
     const delay = setTimeout(async () => {
       try {
         setIsLoadingSearch(true);
-        const { data } = await axios.get(
-          `https://ecommerce-web-app-new.vercel.app/api/products?search=${encodeURIComponent(
+        const { data } = await instance.get(
+          /api/products?search=${encodeURIComponent(
             searchTerm
           )}`
         );
@@ -146,8 +144,8 @@ const Header = () => {
     setNotifOpen(false);
     if (!notif.isRead) {
       try {
-        await axios.patch(
-          `https://ecommerce-web-app-new.vercel.app/api/notifications/${notif._id}/read`
+        await instance.patch(
+         /api/notifications/${notif._id}/read`
         );
         setNotifications((prev) =>
           prev.map((n) => (n._id === notif._id ? { ...n, isRead: true } : n))
