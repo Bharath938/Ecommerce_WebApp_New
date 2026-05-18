@@ -41,7 +41,7 @@ const Header = () => {
     const fetchNotifs = async () => {
       try {
         setNotifLoading(true);
-        const { data } = await instance.get(/api/notifications");
+        const { data } = await instance.get("/api/notifications");
         setNotifications(Array.isArray(data) ? data : []);
       } catch (err) {
         console.error("Notif fetch failed");
@@ -84,7 +84,7 @@ const Header = () => {
       try {
         setIsLoadingSearch(true);
         const { data } = await instance.get(
-          /api/products?search=${encodeURIComponent(
+          `/api/products?search=${encodeURIComponent(
             searchTerm
           )}`
         );
@@ -145,7 +145,7 @@ const Header = () => {
     if (!notif.isRead) {
       try {
         await instance.patch(
-         /api/notifications/${notif._id}/read`
+         `/api/notifications/${notif._id}/read`
         );
         setNotifications((prev) =>
           prev.map((n) => (n._id === notif._id ? { ...n, isRead: true } : n))
