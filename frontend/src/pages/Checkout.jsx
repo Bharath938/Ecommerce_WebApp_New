@@ -65,7 +65,7 @@ const CheckoutForm = () => {
 
     instance
       .get(
-        /api/user/shipping-addresses"
+        "/api/user/shipping-addresses"
       )
       .then((res) => {
         const addrs = Array.isArray(res.data) ? res.data : [];
@@ -117,7 +117,7 @@ const CheckoutForm = () => {
 
     instance
       .post(
-        /api/user/shipping-addresses",
+        "/api/user/shipping-addresses",
         form
       )
       .then((res) => {
@@ -143,7 +143,7 @@ const CheckoutForm = () => {
   const deleteAddress = (id) => {
     instance
       .delete(
-        /api/user/shipping-addresses/${id}`
+        `/api/user/shipping-addresses/${id}`
       )
       .then((res) => {
         toast.success("Address removed");
@@ -167,7 +167,7 @@ const CheckoutForm = () => {
   // Create PayPal order on backend
   const createPaypalOrder = async () => {
     const response = await instance.post(
-      /api/orders/create-paypal-order",
+      "/api/orders/create-paypal-order",
       {
         totalPrice,
       }
@@ -181,7 +181,7 @@ const CheckoutForm = () => {
 
     try {
       const captureRes = await instance.post(
-        /orders/capture-paypal-order/${data.orderID}`
+        `/orders/capture-paypal-order/${data.orderID}`
       );
 
       const paymentResult = {
@@ -237,8 +237,8 @@ const CheckoutForm = () => {
         totalPrice,
       };
 
-      const res = await axios.post(
-        "https://ecommerce-web-app-new.vercel.app/api/orders",
+      const res = await instance.post(
+        "/api/orders",
         orderData
       );
 
