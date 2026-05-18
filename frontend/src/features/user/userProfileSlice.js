@@ -7,9 +7,8 @@ export const fetchUserProfile = createAsyncThunk(
   async (_, { rejectWithValue, getState }) => {
     try {
       const { auth } = getState();
-      // ✅ Include token in headers
       const { data } = await instance.get(
-        /api/user/profile",
+        "/api/user/profile",
         {
           headers: { Authorization: `Bearer ${auth.userInfo.token}` },
         }
@@ -28,7 +27,7 @@ export const updateUserProfile = createAsyncThunk(
     try {
       const { auth } = getState();
       const { data } = await instance.put(
-        /api/user/profile",
+        "/api/user/profile",
         userData,
         {
           headers: { Authorization: `Bearer ${auth.userInfo.token}` },
