@@ -45,9 +45,8 @@ app.use("/api/categories", categoryRoute);
 // Root route
 app.get("/", (req, res) => res.send("QuickBasket API is running"));
 
-// ✅ For Vercel serverless: export the app instead of listening directly
-module.exports = app;
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
  });
+
+module.exports = app;
