@@ -57,7 +57,7 @@ export const updateCartItem = createAsyncThunk(
   async ({ productId, quantity }, { rejectWithValue }) => {
     try {
       const { data } = await instance.put(
-        1/api/cart/${productId}`,
+        `/api/cart/${productId}`,
         { quantity }
       );
       return data; // updated cart item
