@@ -32,8 +32,8 @@ const Products = () => {
   useEffect(() => {
     setLoading(true);
     setError(null);
-    axios
-      .get("https://ecommerce-web-app-new.vercel.app/api/products")
+    instance
+      .get("/api/products")
       .then((res) => {
         if (Array.isArray(res.data)) setAllProducts(res.data);
         else setAllProducts([]);
