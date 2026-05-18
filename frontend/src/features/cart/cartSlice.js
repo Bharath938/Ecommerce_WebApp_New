@@ -7,7 +7,7 @@ export const fetchCart = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const { data } = await instance.get(
-        /api/cart"
+        "/api/cart"
       );
       const cartItems = Array.isArray(data) ? data : data.items || [];
       return cartItems;
@@ -23,7 +23,7 @@ export const addToCart = createAsyncThunk(
   async ({ productId, quantity }, { rejectWithValue }) => {
     try {
       const { data } = await instance.post(
-        /api/cart",
+        "/api/cart",
         {
           productId,
           quantity,
@@ -42,7 +42,7 @@ export const removeFromCart = createAsyncThunk(
   async (productId, { rejectWithValue }) => {
     try {
       await instance.delete(
-        /api/cart/${productId}`
+        "/api/cart/${productId}`
       );
       return productId;
     } catch (err) {
@@ -57,7 +57,7 @@ export const updateCartItem = createAsyncThunk(
   async ({ productId, quantity }, { rejectWithValue }) => {
     try {
       const { data } = await instance.put(
-        /api/cart/${productId}`,
+        "/api/cart/${productId}`,
         { quantity }
       );
       return data; // updated cart item
@@ -72,7 +72,7 @@ export const clearCartOnServer = createAsyncThunk(
   "cart/clearCartOnServer",
   async (_, { rejectWithValue }) => {
     try {
-      await instance.delete(/api/cart"); // assumes API supports DELETE all
+      await instance.delete("/api/cart");
       return true;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || err.message);
