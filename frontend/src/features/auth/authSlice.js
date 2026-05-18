@@ -38,7 +38,7 @@ export const loginUser = createAsyncThunk(
   async ({ email, password }, { rejectWithValue }) => {
     try {
       const { data } = await instance.post(
-        /api/auth/login",
+        "/api/auth/login",
         { email, password }
       );
       localStorage.setItem("userInfo", JSON.stringify(data));
