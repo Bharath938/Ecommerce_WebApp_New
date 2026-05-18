@@ -11,7 +11,7 @@ const Home = () => {
     const fetchCategories = async () => {
       try {
         const { data } = await instance.get(
-          /api/categories"
+          "/api/categories"
         );
         setCategories(data);
       } catch (error) {
